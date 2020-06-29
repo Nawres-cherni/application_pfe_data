@@ -86,7 +86,7 @@ export default class App extends Component {
                 </View>
           
 
-
+//hi
                 <View style={styles.menu}  >
            
             
