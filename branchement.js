@@ -8,10 +8,13 @@ import bgImage from './steg9.jpeg'
 import Logo from './logo.png'
 import RNPickerSelect from 'react-native-picker-select';
 import {strings} from './localization'
+import { ScrollView } from 'react-native-gesture-handler';
 const sendMessage = (props)=>{
 
 const [messageBranch,setMessageBranch] = useState('')
 const [payerBranch,setPayerBranch] = useState('')
+const [typeBranch,setTypeBranch] = useState('')
+
 
 
 const saveRec=()=> {
@@ -22,7 +25,8 @@ headers:{
 },
 body:JSON.stringify({
     messageBranch,
-    payerBranch
+    payerBranch,
+    typeBranch
 })
 })
 .then(res=>res.json())
@@ -42,9 +46,42 @@ Alert.alert(`Votre Branchement est envoyer avec succes`)
           <View style={styles.top} >
             <Image source={Logo} style={styles.logo} />
           </View>
+          <ScrollView>
           <KeyboardAvoidingView>
           <View style={styles.partie2}>
 <Text style={{color:'#136FAF',fontWeight:'bold',fontSize:15,marginStart:20}}>{strings.votre_ref}</Text>
+</View>
+
+
+<View style={{backgroundColor:'rgba(255,255,255,0.1)'
+}}>
+
+<RNPickerSelect
+            onValueChange={(typeBranch) => setTypeBranch(typeBranch)}
+          
+            style={{
+              placeholder: {color: '#136FAF'},
+              padding:10
+            }}
+            placeholder={{
+              label: 'Type de Branchement',
+              value: null,             
+          }}
+          
+         
+            
+        onChangeText={text=>setTypeBranch(text)}
+            items={[
+                { label: 'Nouveau Branchement', value: 'Nouveau Branchement' },
+                { label: 'Remplacer ou Deplacer Compteur', value: 'Remplacer ou Deplacer Compteur' },
+             
+     ]}
+        />
+
+        </View>
+  
+        <View>
+<Text>{`\n`}</Text>
 </View>
 
 <View style={{backgroundColor:'rgba(255,255,255,0.1)'
@@ -113,21 +150,6 @@ Alert.alert(`Votre Branchement est envoyer avec succes`)
      ]}
         />
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </View>
    
         <View>
@@ -156,10 +178,10 @@ underlineColorAndroid={'transparent'}
           <Text style={styles.textlog}>Envoyer</Text>
         </TouchableOpacity>
       </View>
-
+     
         </KeyboardAvoidingView> 
 
-
+        </ScrollView>
 
 
 
