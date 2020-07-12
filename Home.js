@@ -13,7 +13,7 @@ const { width } = Dimensions.get('window');
 export default class App extends Component {
 
  
-/*arabe(){
+arabe(){
     strings.setLanguage('ar');
     this.setState({});
   }
@@ -27,7 +27,7 @@ export default class App extends Component {
   anglais(){
     strings.setLanguage('en');
     this.setState({});
-  }*/
+  }
     
  
   render() {
@@ -40,7 +40,7 @@ export default class App extends Component {
 <ScrollView style={styles.scrollView}>
 
 
-{/*<View >
+<View >
    <TouchableOpacity onPress={()=>this.anglais()}>
     <Flag
     code="US"/>
@@ -58,7 +58,7 @@ export default class App extends Component {
     <Flag
     code="TN"/>
     </TouchableOpacity>    
-    </View>*/}
+    </View>
     <View style={{marginTop:120}}></View>
 <View style={styles.service1}>
                 <TouchableOpacity style={{ alignItems: "center" }}
@@ -271,7 +271,7 @@ export default class App extends Component {
   <Text></Text>
   <Text></Text>
   <Text></Text>
-  <Text></Text>
+  <Text></Text>gggg
   <Text></Text>
   <Text></Text>
   <Text></Text>
